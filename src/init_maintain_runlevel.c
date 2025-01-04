@@ -16,16 +16,17 @@ int init_maintain_runlevel(void) {
 	if (init_runlevel_is_stable)
 		fprintf(
 			runlevel_file,
-			"%c %c <stable>\n",
+			"%c %c <stable> 0\n",
 			init_runlevel,
 			init_last_runlevel
 		);
 	else
 		fprintf(
 			runlevel_file,
-			"%c %c <unstable>\n",
+			"%c %c <unstable> %d\n",
 			init_runlevel,
-			init_last_runlevel
+			init_last_runlevel,
+			init_runlevel_script
 		);
 
 	fclose(runlevel_file);

@@ -18,10 +18,11 @@ struct runlevel_info runlevel_info_get(void) {
 
 	fscanf(
 		fp,
-		"%c %c %15s",
+		"%c %c %15s %d",
 		&info.runlevel,
 		&info.runlevel_last,
-		stability
+		stability,
+		&info.runlevel_pid
 	);
 
 	if (streq(stability, "<stable>"))
