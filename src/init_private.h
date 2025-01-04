@@ -6,5 +6,6 @@
 extern sigset_t		init_signal_set;
 extern int			init_pipe_fd;
 extern pid_t		init_runlevel_script;
+extern char			init_runlevel;
 
 #endif /* GINITD_INIT_PRIVATE_H */

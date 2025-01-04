@@ -18,8 +18,11 @@ int init_userspace_main(int argc, char **argv) {
 			init_send_code("r:1             ");
 			break;
 
-		case '2':
 		case '3':
+			init_send_code("r:3             ");
+			break;
+
+		case '2':
 		case '4':
 		case '5':
 		case 'q':

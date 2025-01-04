@@ -6,6 +6,9 @@
 #include "init_private.h"
 
 int init_spawn_runlevel_script(char runlevel) {
+	// Update the internal runlevel.
+	init_runlevel = runlevel;
+
 	init_runlevel_script = vfork();
 	
 	switch (init_runlevel_script) {

@@ -22,7 +22,18 @@ int init_read_code(void) {
 	switch (code[0]) {
 		// [r]unlevel
 		case 'r':
-			eputs("init: The system is going down NOW!\n");
+			if (code[2] == init_runlevel) {
+				eprintf(
+					"init: runlevel is already %d, doing nothing",
+					init_runlevel
+				);
+				break;
+			}
+
+			eprintf(
+				"init: changing runlevel to %d",
+				code[2]
+			);
 			init_spawn_runlevel_script(code[2]);
 			break;
 

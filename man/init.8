@@ -13,32 +13,28 @@ is responsible for the initial startup and initialisation of the system. It also
 stays alive for the whole life of the system to reap processes (to stop process
 records accumulating in the kernel's process table). init also manages shutting
 down and rebooting the system, but it does not reboot itself; this task is
-delegated to the \fBrunlevel\fR(8) program. init manages a pipe (usually stored
-at /run/pid1.pipe); one can send instructions along this pipe.
+delegated to the \fBrunlevel-start\fR(8) program. init manages a pipe (usually
+stored at /run/pid1.pipe); one can send instructions along this pipe.
 
 .PP
 The other function that
 .B init
 can perform is sending instructions along the pipe to process 1. These
 instructions govern shutting down the system. As mentioned, init does almost no
-work by itself, so these just call the \fBrunlevel\fR(8) program. In reality,
-you could just call this program from a superuser shell, but that is against the
-rules; see more in the manpage for \fBrunlevel\fR(8). The meaning of the options
-[016sS] are probably known to most UNIX administrators, but they are covered in
-the
+work by itself, so these just call the \fBrunlevel-start\fR(8) program. In
+reality, you could just call this program from a superuser shell, but that is
+against the rules; see more in the manpage for \fBrunlevel-start\fR(8). The
+meaning of the options [016sS] are probably known to most UNIX administrators,
+but they are covered in the
 .B
 OPTIONS
 section.
 
 .PP
-On initial startup, \fBrunlevel\fR(8) is called with the option '3'. This
+On initial startup, \fBrunlevel-start\fR(8) is called with the option '3'. This
 number is fairly arbitrary, but was chosen to fit with the System-V like
-numbering of other runlevels. While
-.B init
-itself does not support the option '3', it is supported by the runlevel program;
-thus, to return to normal operation from single-user mode, you can run the
-command `runlevel 3' in the single-user shell. Upon shutting down, the runlevel
-program is called with the appropriate
+numbering of other runlevels. Upon shutting down, the runlevel program is called
+with the appropriate
 .I digit
 (i.e. not one of 'S' or 's'). There is no way to halt the system without
 powering it down safely; the only reason you would want to do this would be if
@@ -52,10 +48,9 @@ Shut down (halt and turn the power off) the system.
 
 .TP
 .B 1,s,S
-Go to single-user mode. The details of this belong to \fBrunlevel\fR(8), but it
-involves performing almost a complete shutdown, except for the reboot, and then
-starting a superuser shell. This is not recommended except for the most drastic
-maintenance of the system.
+Go to single-user mode. The details of this belong to \fBrunlevel-start\fR(8),
+but it involves performing almost a complete shutdown, except for the reboot,
+and then starting a superuser shell.
 .BR
 Note that unlike on some System V systems, all of 1, s, and S do exactly the
 same things; they are synonyms for System V init compatibility.
