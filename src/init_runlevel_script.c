@@ -1,0 +1,30 @@
+#include <unistd.h>
+#include <signal.h>
+#include <stdio.h>
+
+#include "init_macros.h"
+#include "init_private.h"
+
+int init_spawn_runlevel_script(char runlevel) {
+	init_runlevel_script = vfork();
+	
+	switch (init_runlevel_script) {
+		case 0:
+			sigprocmask(SIG_UNBLOCK, &init_signal_set, NULL);
+			setsid();
+			execl(
+				INIT_RC_RUNLEVEL_SC,
+				INIT_RC_RUNLEVEL_SC,
+				(char[]){runlevel, '\0'},
+				NULL
+			);
+			perror("init: execvp");
+			_exit(1);
+		
+		case -1:
+			perror("init: fork");
+			return -255;
+    }
+
+	return 0;
+}
