@@ -24,6 +24,7 @@ libginitd = static_library(
 
 	# runlevel
 	'runlevel_info.c',
+	'runlevel_info_raw.c',
 	'runlevel_main.c',
 	'runlevel_show.c',
 

@@ -1,23 +1,22 @@
 #include <stdio.h>
 
 #include "misc_macros.h"
-#include "init_macros.h"
 #include "runlevel_info.h"
+#include "runlevel_info_raw.h"
+#include "runlevel_macros.h"
 
 struct runlevel_info runlevel_info_get(void) {
-	FILE	*fp;
+	char	buffer[RUNLEVEL_BUFSIZE];
 	char	stability[16];
 	struct runlevel_info info;
 
-	fp = fopen(INIT_RUNLEVEL_STAT, "r");
-	if (!fp) {
-		eputs("runlevel: could not read runlevel file\n");
+	if (runlevel_info_get_raw(buffer, RUNLEVEL_BUFSIZE - 1) == -1) {
 		info.is_stable	= -1;
 		return info;
 	}
 
-	fscanf(
-		fp,
+	sscanf(
+		buffer,
 		"%c %c %15s %d",
 		&info.runlevel,
 		&info.runlevel_last,
@@ -33,8 +32,6 @@ struct runlevel_info runlevel_info_get(void) {
 		eputs("runlevel: could not read stability\n");
 		info.is_stable = -1;
 	}
-
-	fclose(fp);
 	
 	return info;
 }

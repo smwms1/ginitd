@@ -1,12 +1,19 @@
 #ifndef GINITD_RUNLEVEL_MACROS_H
 #define GINITD_RUNLEVEL_MACROS_H
 
+#define RUNLEVEL_BUFSIZE	32
+
 #define RUNLEVEL_USAGE										\
-	"usage: \033[1mrunlevel\033[0m \033[90m[-h]\033[0m\n"	\
+	"usage: \033[1mrunlevel\033[0m \033[90m[-rh]\033[0m\n"	\
 
 #define RUNLEVEL_USAGE_EXTENDED								\
-	"\t\033[1m-h\033[0m\n"									\
-	"\t\tDisplay this help message.\n"						\
+	"\033[1;36moptions:\033[0m\n"							\
+	"  \033[1m-r\033[0m"									\
+	"      "												\
+	"Display the status information in raw format.\n"		\
+	"  \033[1m-h\033[0m"									\
+	"      "												\
+	"Display this help message.\n"							\
 	"\n"													\
 	"runlevel is a part of ginitd:\n"						\
 	"Copyright (C) 2019-2025 Solomon Wood\n"
