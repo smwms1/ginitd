@@ -1,0 +1,27 @@
+.TH RUNLEVEL 1 "January 2025"
+
+.SH NAME
+runlevel \- show System V compatible runlevel information
+
+.SH SYNOPSIS
+.B runlevel
+[-h]
+
+.SH DESCRIPTION
+.B runlevel
+queries init's status file (usually /run/runlevel) for the current runlevel and
+the previous runlevel. It prints this in the format '<previous runlevel>
+<current runlevel>' If called with the option '-r', it gives init's raw status
+information from the status file.
+
+.SH OPTIONS
+.TP
+.B -r
+Display the status information in raw format.
+
+.TP
+.B -h
+Display a help message.
+
+.SH AUTHORS
+Solomon Morgan Wood-Matthaeusson
