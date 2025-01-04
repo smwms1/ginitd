@@ -1,6 +1,12 @@
 libginitd = static_library(
 	'ginitd',
 
+	# getopt
+	'getopt_error.c',
+	'getopt_init.c',
+	'getopt_private.c',
+	'getopt_usage.c',
+
 	# init
 	'init_handle_selinux.c',
 	'init_main.c',
@@ -15,6 +21,12 @@ libginitd = static_library(
 	# path
 	'path_concat.c',
 	'path_private.c',
+
+	# runlevel
+	'runlevel_info.c',
+	'runlevel_main.c',
+	'runlevel_show_sysv.c',
+	'runlevel_show_tty.c',
 
 	# supervise
 	'supervise_control_mk.c',
@@ -32,4 +44,15 @@ executable(
 	link_with: libginitd,
 	install: true,
 	install_dir: 'sbin'
+)
+
+executable(
+	'runlevel',
+	
+	# runlevel
+	'runlevel.c',
+	
+	link_with: libginitd,
+	install: true,
+	install_dir: 'bin'
 )

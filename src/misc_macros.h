@@ -3,6 +3,7 @@
 
 #include <stdio.h>
 #include <unistd.h>
+#include <string.h>
 
 #define streq(a,b)		(strcmp(a, b) == 0)
 #define eprintf(...)	fprintf(stderr, __VA_ARGS__)
