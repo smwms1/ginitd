@@ -9,3 +9,7 @@ major concepts differ.
 components have even been written yet, and it will need some time to mature and
 for bugs (if any exist) to be squashed. I hope to release ginitd in the alpha
 stage at some point in early 2025.
+
+This is a screenshot of an older version of ginitd:
+
+![screenshot.png](screenshot.png)
