@@ -4,6 +4,7 @@ libginitd = static_library(
 	# init
 	'init_handle_selinux.c',
 	'init_main.c',
+	'init_maintain_runlevel.c',
 	'init_private.c',
 	'init_read_code.c',
 	'init_reap_zombies.c',

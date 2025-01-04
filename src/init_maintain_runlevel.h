@@ -1,0 +1,6 @@
+#ifndef GINTID_INIT_MAINTAIN_RUNLEVEL_H
+#define GINTID_INIT_MAINTAIN_RUNLEVEL_H
+
+int init_maintain_runlevel(void);
+
+#endif /* GINTID_INIT_MAINTAIN_RUNLEVEL_H */
