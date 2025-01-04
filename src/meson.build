@@ -25,8 +25,7 @@ libginitd = static_library(
 	# runlevel
 	'runlevel_info.c',
 	'runlevel_main.c',
-	'runlevel_show_sysv.c',
-	'runlevel_show_tty.c',
+	'runlevel_show.c',
 
 	# supervise
 	'supervise_control_mk.c',

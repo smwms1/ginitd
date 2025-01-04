@@ -9,8 +9,7 @@
 #include "runlevel_info.h"
 #include "runlevel_macros.h"
 #include "runlevel_main.h"
-#include "runlevel_show_sysv.h"
-#include "runlevel_show_tty.h"
+#include "runlevel_show.h"
 
 int runlevel_main(int argc, char **argv) {
 	int c;
@@ -40,10 +39,7 @@ int runlevel_main(int argc, char **argv) {
 	if (info.is_stable == -1)
 		return -1;
 
-	if (isatty(STDOUT_FILENO))
-		runlevel_show_tty(info);
-	else
-		runlevel_show_sysv(info);
+	runlevel_show(info);
 
 	return 0;
 }
