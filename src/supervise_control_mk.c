@@ -12,13 +12,13 @@
 int supervise_make_control(void) {
 	char *control_path;
 
-	control_path = path_concat(tempdir_path, SUPERVISE_CTRL_PIPE);
+	control_path = path_concat(supervise_tempdir_path, SUPERVISE_CTRL_PIPE);
 	if (mkfifo(control_path, 660) == -1)
 		goto report_error;
 
-	control	= open(SUPERVISE_CTRL_PIPE, O_RDONLY | O_NONBLOCK);
+	supervise_control	= open(SUPERVISE_CTRL_PIPE, O_RDONLY | O_NONBLOCK);
 	
-	if (control == -1)
+	if (supervise_control == -1)
 		goto report_error;
 
 report_error:
