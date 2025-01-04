@@ -12,4 +12,4 @@ stage at some point in early 2025.
 
 This is a screenshot of an older version of ginitd:
 
-![screenshot.png](screenshot.png)
+<img src="screenshot.png" style="width: 60%;"/>
