@@ -10,6 +10,10 @@ components have even been written yet, and it will need some time to mature and
 for bugs (if any exist) to be squashed. I hope to release ginitd in the alpha
 stage at some point in early 2025.
 
+For stuff that needs doing, see the [TODO](TODO.md) list.
+
+### SCREENSHOT
+
 This is a screenshot of an older version of ginitd:
 
 <img src="screenshot.png" style="width: 60%;"/>
