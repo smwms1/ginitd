@@ -6,10 +6,10 @@
 
 int main(int argc, char **argv) {
 	if (getpid() != 1) {
-		logging_init("init", LOGGING_FACIL_USER);
+		logging_init(argc, argv, LOGGING_FACIL_USER);
 		return init_userspace_main(argc, argv);
 	}
 
-	logging_init("init", LOGGING_FACIL_INIT);
+	logging_init(argc, argv, LOGGING_FACIL_INIT);
 	return init_main(argc, argv);
 }

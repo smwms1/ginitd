@@ -43,7 +43,7 @@ libginitd = static_library(
 	'supervise_sv.c'
 )
 
-executable(
+sbin_init = executable(
 	'init',
 	
 	# init
@@ -54,7 +54,7 @@ executable(
 	install_dir: 'sbin'
 )
 
-executable(
+bin_runlevel = executable(
 	'runlevel',
 	
 	# runlevel
@@ -65,13 +65,9 @@ executable(
 	install_dir: 'bin'
 )
 
-executable(
+install_symlink(
 	'telinit',
-	
-	# telinit
-	'telinit.c',
-	
-	link_with: libginitd,
-	install: true,
-	install_dir: 'sbin'
+
+	install_dir: 'sbin',
+	pointing_to: sbin_init
 )

@@ -2,7 +2,7 @@
 #include "runlevel_main.h"
 
 int main(int argc, char **argv) {
-	logging_init("runlevel", LOGGING_FACIL_USER);
+	logging_init(argc, argv, LOGGING_FACIL_USER);
 
 	runlevel_main(argc, argv);
 }
