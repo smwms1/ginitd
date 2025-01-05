@@ -38,6 +38,7 @@ libginitd = static_library(
 	# supervise
 	'supervise_control_mk.c',
 	'supervise_private.c',
+	'supervise_sv_status_getpath.c',
 	'supervise_sv_status.c',
 	'supervise_sv.c'
 )
@@ -62,4 +63,15 @@ executable(
 	link_with: libginitd,
 	install: true,
 	install_dir: 'bin'
+)
+
+executable(
+	'telinit',
+	
+	# telinit
+	'telinit.c',
+	
+	link_with: libginitd,
+	install: true,
+	install_dir: 'sbin'
 )
