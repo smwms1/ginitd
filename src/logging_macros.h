@@ -1,0 +1,6 @@
+#ifndef GINITD_LOGGING_MACROS_H
+#define GINITD_LOGGING_MACROS_H
+
+#define LOGGING_INIT_LOG_PATH	"/run/init/init.log"
+
+#endif /* GINITD_LOGGING_MACROS_H */

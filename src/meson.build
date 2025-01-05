@@ -18,6 +18,12 @@ libginitd = static_library(
 	'init_send_code.c',
 	'init_userspace.c',
 
+	# logging
+	'logging_init.c',
+	'logging_logf.c',
+	'logging_private.c',
+	'logging_write.c',
+
 	# path
 	'path_concat.c',
 	'path_private.c',
