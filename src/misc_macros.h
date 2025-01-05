@@ -9,6 +9,6 @@
 #define eprintf(...)	fprintf(stderr, __VA_ARGS__)
 #define eputs(s)		fputs(s, stderr)
 #define eputc(c)		fputc(c, stderr)
-#define fexists(p)		(access(INIT_PID1_PIPE, F_OK) != 0)
+#define fexists(p)		(access(p, F_OK) == 0)
 
 #endif /* GINITD_H */

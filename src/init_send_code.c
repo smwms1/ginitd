@@ -6,7 +6,7 @@
 #include "init_send_code.h"
 
 int init_send_code(char *code) {
-	if (fexists(INIT_PID1_PIPE))
+	if (!fexists(INIT_PID1_PIPE))
 		goto comm_error;
 
 	FILE *fp	= fopen(INIT_PID1_PIPE, "w");
