@@ -8,6 +8,7 @@ int init_read_code(void) {
 	size_t bytes;
 
 	bytes = read(init_pipe_fd, code, 16);
+	code[16] = '\0';
 
 	// There was nothing to read.
 	if (bytes == 0)
