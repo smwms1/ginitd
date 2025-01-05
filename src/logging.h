@@ -9,7 +9,8 @@
 	  not intend to do this for other subsystems.
 */
 
-#include "logging_init.h" // IWYU pragma: export
-#include "logging_logf.h" // IWYU pragma: export
+#include "logging_errno.h"	// IWYU pragma: export
+#include "logging_init.h"	// IWYU pragma: export
+#include "logging_logf.h"	// IWYU pragma: export
 
 #endif /* GINITD_LOGGING_H */
