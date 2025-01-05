@@ -6,6 +6,8 @@
 
 #include <selinux/selinux.h>
 
+#include "misc_macros.h"
+
 void init_handle_selinux(char *argv_0) {
 	if (getenv("SELINUX_INIT") == NULL) {
 		if (is_selinux_enabled() != 1) {
@@ -15,7 +17,7 @@ void init_handle_selinux(char *argv_0) {
 			}
 			else {
 				if (enforce > 0) {
-					eputs("init: unable to load SELinux policy.\n");
+					eputs("unable to load SELinux policy");
 					exit(1);
 				}
 			}
