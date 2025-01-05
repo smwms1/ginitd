@@ -18,6 +18,7 @@ int init_main(int argc, char **argv) {
 	init_handle_selinux(argv[0]);
 
 	chdir("/");
+	mkdir("/run/init", 0770);
 
 	sigfillset(&init_signal_set);
 	sigdelset(&init_signal_set, SIGTERM);
