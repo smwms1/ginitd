@@ -8,6 +8,6 @@
 	  every few lines of code. This is AGAINST THE RULES; this is
 	  the only instance in which they can be broken.
 */
-void glogf(char *, ...);
+void glogf(char, char *, ...);
 
 #endif /* GINITD_LOGGING_LOGF_H */

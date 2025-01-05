@@ -19,6 +19,7 @@ libginitd = static_library(
 	'init_userspace.c',
 
 	# logging
+	'logging_errno.c',
 	'logging_init.c',
 	'logging_logf.c',
 	'logging_private.c',
