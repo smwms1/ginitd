@@ -4,7 +4,7 @@
 #include <unistd.h>
 #include <fcntl.h>
 
-#include "misc_macros.h"
+#include "logging.h"
 #include "init_macros.h"
 #include "init_private.h"
 #include "init_runlevel_script.h"
@@ -13,7 +13,7 @@
 #include "init_handle_selinux.h"
 
 int init_main(int argc, char **argv) {
-	eputs("init: booting...\n");
+	glogf('i', "booting...");
 
 	init_handle_selinux(argv[0]);
 

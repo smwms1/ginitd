@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-#include "misc_macros.h"
+#include "logging.h"
 #include "init_private.h"
 #include "init_macros.h"
 
@@ -9,7 +9,7 @@ int init_maintain_runlevel(void) {
 
 	runlevel_file = fopen(INIT_RUNLEVEL_STAT, "w");
 	if (!runlevel_file) {
-		eputs("init: failed to update runlevel on disk.\n");
+		glogf('!', "failed to update runlevel on disk");
 		return -1;
 	}
 

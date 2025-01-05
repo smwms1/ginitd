@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <fcntl.h>
 
-#include "misc_macros.h"
+#include "logging.h"
 #include "supervise_control_mk.h"
 #include "supervise_private.h"
 #include "supervise_macros.h"
@@ -22,6 +22,6 @@ int supervise_make_control(void) {
 		goto report_error;
 
 report_error:
-	eputs("supervise: could not connect to control pipe\n");
+	glogerr("could not create control pipe");
 	exit(1);
 }

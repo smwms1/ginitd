@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+#include "logging.h"
 #include "misc_macros.h"
 #include "init_macros.h"
 #include "init_send_code.h"
@@ -19,6 +20,6 @@ int init_send_code(char *code) {
 	return 0;
 
 comm_error:
-	eputs("init: communication failed\n");
+	glogf('!', "init: communication failed\n");
 	return -1;
 }

@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+#include "logging.h"
 #include "misc_macros.h"
 #include "runlevel_info.h"
 #include "runlevel_info_raw.h"
@@ -29,7 +30,7 @@ struct runlevel_info runlevel_info_get(void) {
 	else if (streq(stability, "<unstable>"))
 		info.is_stable = 0;
 	else {
-		eputs("runlevel: could not read stability\n");
+		glogf('!', "could not read stability");
 		info.is_stable = -1;
 	}
 	

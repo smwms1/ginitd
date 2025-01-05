@@ -1,4 +1,6 @@
-#include "misc_macros.h"
+#include <unistd.h>
+
+#include "logging.h"
 #include "init_private.h"
 #include "init_runlevel_script.h"
 #include "init_read_code.h"
@@ -24,17 +26,11 @@ int init_read_code(void) {
 		// [r]unlevel
 		case 'r':
 			if (code[2] == init_runlevel) {
-				eprintf(
-					"init: runlevel is already %d, doing nothing",
-					init_runlevel
-				);
+				glogf('n', "runlevel is already %d, doing nothing", init_runlevel);
 				break;
 			}
 
-			eprintf(
-				"init: changing runlevel to %d",
-				code[2]
-			);
+			glogf('n', "changing runlevel to %d", code[2]);
 			init_spawn_runlevel_script(code[2]);
 			break;
 
@@ -45,6 +41,6 @@ int init_read_code(void) {
 	return 0;
 
 processing_error:
-	eputs("init: invalid request\n");
+	glogf('w', "invalid request");
 	return -1;
 }
