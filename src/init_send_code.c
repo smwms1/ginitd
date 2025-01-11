@@ -14,7 +14,7 @@ int init_send_code(char *code) {
 	if (!fp)
 		goto comm_error;
 
-	fputs(code, fp);
+	fprintf(fp, "%-16s", code);
 	fclose(fp);
 
 	return 0;

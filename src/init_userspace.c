@@ -1,45 +1,45 @@
+#include <getopt.h>
+#include <stdlib.h>
+#include <unistd.h>
+
+#include "getopt_args.h"
+#include "getopt_args_error.h"
+#include "getopt_error.h"
+#include "getopt_init.h"
+#include "getopt_usage.h"
 #include "misc_macros.h"
-#include "init_send_code.h"
+#include "init_macros.h"
+#include "init_parse_code.h"
+#include "init_userspace.h"
 
 int init_userspace_main(int argc, char **argv) {
-	if (argc != 2) {
-		eputs("init: incorrect arguments\n");
-		return -1;
-	}
+	int c;
+	char code;
 
-	switch (argv[1][0]) {
-		case '0':
-			init_send_code("r:0             ");
-			break;
+	getopt_init();
+	getopt_set_usage(INIT_USAGE);
 
-		case '1':
-		case 'S':
-		case 's':
-			init_send_code("r:1             ");
-			break;
-
-		case '3':
-			init_send_code("r:3             ");
-			break;
-
-		case '2':
-		case '4':
-		case '5':
-		case 'q':
-		case 'Q':
-		case 'u':
-		case 'U':
-			eputs("init: not supported, but allowed\n");
-			break;
-
-		case '6':
-			init_send_code("r:6             ");
-			break;
-
+	while ((c = getopt(argc, argv, "hr")) != -1) {
+		switch (c) {
+		case 'h':
+			getopt_display_usage();
+			eputs("\n" INIT_USAGE_EXTENDED);
+			return 0;
+		
+		case '?':
+			getopt_handle_error("");
+		
 		default:
-			eputs("init: not supported\n");
-			return -1;
+			abort();
+		}
 	}
+
+	if (getopt_args_remaining() != 1)
+		getopt_handle_args_error(1);
+
+	code = argv[getopt_args_starts_at() + 1][0];
+
+	init_parse_code(code);
 
 	return 0;
 }

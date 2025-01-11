@@ -1,9 +1,11 @@
+#include <stdlib.h>
 #include <getopt.h>
 #include <string.h>
 #include <ctype.h>
 
 #include "misc_macros.h"
 #include "getopt_usage.h"
+#include "getopt_error.h"
 
 void getopt_handle_error(char *argopts) {
 	int i;
@@ -33,4 +35,6 @@ void getopt_handle_error(char *argopts) {
 
 display_usage:
 	getopt_display_usage();
+
+	exit(-1);
 }

@@ -5,6 +5,8 @@ libginitd = static_library(
 	'cli_args.c',
 
 	# getopt
+	'getopt_args_error.c',
+	'getopt_args.c',
 	'getopt_error.c',
 	'getopt_init.c',
 	'getopt_private.c',
@@ -14,6 +16,7 @@ libginitd = static_library(
 	'init_handle_selinux.c',
 	'init_main.c',
 	'init_maintain_runlevel.c',
+	'init_parse_code.c',
 	'init_private.c',
 	'init_read_code.c',
 	'init_reap_zombies.c',
