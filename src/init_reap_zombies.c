@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <unistd.h>
 
+#include "logging.h"
 #include "init_private.h"
 #include "init_reap_zombies.h"
 #include "init_maintain_runlevel.h"
@@ -22,7 +23,7 @@ void init_reap_zombies(void) {
 		else if (pid == -1) {
 			if (errno == ECHILD)
 				break;
-			perror("init: waitpid");
+			glogerr("waitpid");
 			continue;
 		}
 	}

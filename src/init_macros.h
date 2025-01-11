@@ -33,4 +33,15 @@
 	"init is a part of ginitd:\n"							\
 	"Copyright (C) 2019-2025 Solomon Wood\n"
 
+#define INIT_EPERM_ERROR										\
+	"\033[31mShould you have run this as superuser?\033[0m\n"
+
+#define INIT_EHOSTDOWN_ERROR										\
+	"\033[31m"														\
+	"The system has been booted without ginitd as the active init "	\
+	"system (PID 1)."												\
+	"\n"															\
+	"Cannot operate."												\
+	"\033[0m\n"
+
 #endif

@@ -13,6 +13,7 @@ libginitd = static_library(
 	'getopt_usage.c',
 
 	# init
+	'init_comm_error.c',
 	'init_handle_selinux.c',
 	'init_main.c',
 	'init_maintain_runlevel.c',

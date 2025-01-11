@@ -1,13 +1,18 @@
+#include <asm-generic/errno.h>
 #include <stdio.h>
+#include <unistd.h>
+#include "errno.h"
 
-#include "logging.h"
 #include "misc_macros.h"
 #include "init_macros.h"
 #include "init_send_code.h"
+#include "init_comm_error.h"
 
 int init_send_code(char *code) {
-	if (!fexists(INIT_PID1_PIPE))
+	if (!fexists(INIT_PID1_PIPE)) {
+		errno = EHOSTDOWN;
 		goto comm_error;
+	}
 
 	FILE *fp	= fopen(INIT_PID1_PIPE, "w");
 
@@ -20,6 +25,6 @@ int init_send_code(char *code) {
 	return 0;
 
 comm_error:
-	glogf('!', "init: communication failed\n");
+	init_comm_error();
 	return -1;
 }

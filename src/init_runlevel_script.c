@@ -2,9 +2,11 @@
 #include <signal.h>
 #include <stdio.h>
 
+#include "logging.h"
 #include "init_macros.h"
 #include "init_private.h"
 #include "init_maintain_runlevel.h"
+#include "logging_errno.h"
 
 int init_spawn_runlevel_script(char runlevel) {
 	// Update the internal runlevel.
@@ -25,11 +27,13 @@ int init_spawn_runlevel_script(char runlevel) {
 				(char[]){runlevel, '\0'},
 				NULL
 			);
-			perror("init: execvp");
+			// I'm assuming that logging in a vfork'd process won't cause any
+			// trouble.
+			glogerr("execvp");
 			_exit(1);
 		
 		case -1:
-			perror("init: fork");
+			glogerr("fork");
 			return -255;
     }
 
