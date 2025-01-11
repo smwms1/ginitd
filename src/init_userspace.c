@@ -38,7 +38,7 @@ int init_userspace_main(void) {
 	if (getopt_args_remaining() != 1)
 		getopt_handle_args_error(1);
 
-	code = cli_argv[getopt_args_starts_at() + 1][0];
+	code = cli_argv[getopt_args_starts_at()][0];
 
 	init_parse_code(code);
 
