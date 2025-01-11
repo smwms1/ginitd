@@ -3,12 +3,13 @@
 #include <syslog.h>
 #include <libgen.h>
 
+#include "cli_args.h"
 #include "logging_init.h"
 #include "logging_macros.h"
 #include "logging_private.h"
 
-void logging_init(int argc, char **argv, int syslog_facil) {
-	strcpy(logging_name, basename(argv[0]));
+void logging_init(int syslog_facil) {
+	strcpy(logging_name, basename(cli_argv[0]));
 	
 	logging_init_log = NULL;
 

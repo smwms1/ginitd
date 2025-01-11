@@ -3,6 +3,7 @@
 #include <unistd.h>
 
 #include "misc_macros.h"
+#include "cli_args.h"
 #include "getopt_error.h"
 #include "getopt_init.h"
 #include "getopt_usage.h"
@@ -12,7 +13,7 @@
 #include "runlevel_main.h"
 #include "runlevel_show.h"
 
-int runlevel_main(int argc, char **argv) {
+int runlevel_main(void) {
 	int c;
 	int r;
 	struct runlevel_info info;
@@ -22,7 +23,7 @@ int runlevel_main(int argc, char **argv) {
 	getopt_init();
 	getopt_set_usage(RUNLEVEL_USAGE);
 
-	while ((c = getopt(argc, argv, "hr")) != -1) {
+	while ((c = getopt(cli_argc, cli_argv, "hr")) != -1) {
 		switch (c) {
 		case 'h':
 			getopt_display_usage();

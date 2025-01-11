@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 
+#include "cli_args.h"
 #include "getopt_args.h"
 #include "getopt_args_error.h"
 #include "getopt_error.h"
@@ -12,14 +13,14 @@
 #include "init_parse_code.h"
 #include "init_userspace.h"
 
-int init_userspace_main(int argc, char **argv) {
+int init_userspace_main(void) {
 	int c;
 	char code;
 
 	getopt_init();
 	getopt_set_usage(INIT_USAGE);
 
-	while ((c = getopt(argc, argv, "hr")) != -1) {
+	while ((c = getopt(cli_argc, cli_argv, "hr")) != -1) {
 		switch (c) {
 		case 'h':
 			getopt_display_usage();
@@ -37,7 +38,7 @@ int init_userspace_main(int argc, char **argv) {
 	if (getopt_args_remaining() != 1)
 		getopt_handle_args_error(1);
 
-	code = argv[getopt_args_starts_at() + 1][0];
+	code = cli_argv[getopt_args_starts_at() + 1][0];
 
 	init_parse_code(code);
 

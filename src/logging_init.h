@@ -21,6 +21,6 @@
 #define LOGGING_FACIL_DAEMON	LOG_DAEMON
 #define LOGGING_FACIL_USER		LOG_USER
 
-void logging_init(int, char **, int);
+void logging_init(int);
 
 #endif /* GINITD_LOGGING_INIT_H */

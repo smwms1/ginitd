@@ -5,6 +5,7 @@
 #include <fcntl.h>
 
 #include "logging.h"
+#include "cli_args.h"
 #include "init_macros.h"
 #include "init_private.h"
 #include "init_runlevel_script.h"
@@ -12,10 +13,10 @@
 #include "init_read_code.h"
 #include "init_handle_selinux.h"
 
-int init_main(int argc, char **argv) {
+int init_main(void) {
 	glogf('i', "booting...");
 
-	init_handle_selinux(argv[0]);
+	init_handle_selinux(cli_argv[0]);
 
 	chdir("/");
 	mkdir("/run/init", 0770);
