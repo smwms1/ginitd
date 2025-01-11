@@ -1,6 +1,9 @@
 libginitd = static_library(
 	'ginitd',
 
+	# cli
+	'cli_args.c',
+
 	# getopt
 	'getopt_error.c',
 	'getopt_init.c',
@@ -43,7 +46,7 @@ libginitd = static_library(
 	'supervise_sv.c'
 )
 
-sbin_init = executable(
+executable(
 	'init',
 	
 	# init
@@ -51,10 +54,10 @@ sbin_init = executable(
 	
 	link_with: libginitd,
 	install: true,
-	install_dir: 'sbin'
+	install_dir: '/sbin'
 )
 
-bin_runlevel = executable(
+executable(
 	'runlevel',
 	
 	# runlevel
@@ -62,12 +65,12 @@ bin_runlevel = executable(
 	
 	link_with: libginitd,
 	install: true,
-	install_dir: 'bin'
+	install_dir: '/bin'
 )
 
 install_symlink(
 	'telinit',
 
-	install_dir: 'sbin',
-	pointing_to: sbin_init
+	install_dir: '/sbin',
+	pointing_to: '/sbin/init'
 )
