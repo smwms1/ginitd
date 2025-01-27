@@ -40,22 +40,15 @@ libginitd = static_library(
 	'runlevel_info.c',
 	'runlevel_info_raw.c',
 	'runlevel_main.c',
-	'runlevel_show.c',
-
-	# supervise
-	'supervise_control_mk.c',
-	'supervise_private.c',
-	'supervise_sv_status_getpath.c',
-	'supervise_sv_status.c',
-	'supervise_sv.c'
+	'runlevel_show.c'
 )
 
 executable(
 	'init',
-	
+
 	# init
 	'init.c',
-	
+
 	link_with: libginitd,
 	install: true,
 	install_dir: '/sbin'
@@ -63,10 +56,10 @@ executable(
 
 executable(
 	'runlevel',
-	
+
 	# runlevel
 	'runlevel.c',
-	
+
 	link_with: libginitd,
 	install: true,
 	install_dir: '/bin'
