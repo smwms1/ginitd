@@ -1,5 +1,5 @@
-#ifndef GINITD_H
-#define GINITD_H
+#ifndef OPUS_H
+#define OPUS_H
 
 #include <stdio.h>
 #include <unistd.h>
@@ -11,4 +11,4 @@
 #define eputc(c)		fputc(c, stderr)
 #define fexists(p)		(access(p, F_OK) == 0)
 
-#endif /* GINITD_H */
+#endif /* OPUS_H */

@@ -1,11 +1,11 @@
-#ifndef GINITD_LOGGING_INIT_H
-#define GINITD_LOGGING_INIT_H
+#ifndef OPUS_LOGGING_INIT_H
+#define OPUS_LOGGING_INIT_H
 
 #include <syslog.h>
 
 /*
 	I've often found myself wondering which syslog facility to use, so here is
-	a definitive decision for ginitd:
+	a definitive decision for opus:
 
 	* Userspace programs, however important, use LOG_USER
 	* Most daemons (e.g supervise) will use LOG_DAEMON
@@ -23,4 +23,4 @@
 
 void logging_init(int);
 
-#endif /* GINITD_LOGGING_INIT_H */
+#endif /* OPUS_LOGGING_INIT_H */

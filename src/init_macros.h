@@ -1,5 +1,5 @@
-#ifndef GINITD_INIT_MACROS_H
-#define GINITD_INIT_MACROS_H
+#ifndef OPUS_INIT_MACROS_H
+#define OPUS_INIT_MACROS_H
 
 #define INIT_PID1_PIPE		"/run/init/pid1.pipe"
 #define INIT_RUNLEVEL_STAT	"/run/init/runlevel"
@@ -30,7 +30,7 @@
 	"      "												\
 	"Display this help message.\n"							\
 	"\n"													\
-	"init is a part of ginitd:\n"							\
+	"init is a part of opus:\n"							\
 	"Copyright (C) 2019-2025 Solomon Wood\n"
 
 #define INIT_EPERM_ERROR										\
@@ -38,7 +38,7 @@
 
 #define INIT_EHOSTDOWN_ERROR										\
 	"\033[31m"														\
-	"The system has been booted without ginitd as the active init "	\
+	"The system has been booted without opus as the active init "	\
 	"system (PID 1)."												\
 	"\n"															\
 	"Cannot operate."												\

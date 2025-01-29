@@ -1,5 +1,5 @@
-#ifndef GINITD_LOGGING_H
-#define GINITD_LOGGING_H
+#ifndef OPUS_LOGGING_H
+#define OPUS_LOGGING_H
 
 /*
 	NOTE:
@@ -13,4 +13,4 @@
 #include "logging_init.h"	// IWYU pragma: export
 #include "logging_logf.h"	// IWYU pragma: export
 
-#endif /* GINITD_LOGGING_H */
+#endif /* OPUS_LOGGING_H */

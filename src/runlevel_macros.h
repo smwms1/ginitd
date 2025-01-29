@@ -1,5 +1,5 @@
-#ifndef GINITD_RUNLEVEL_MACROS_H
-#define GINITD_RUNLEVEL_MACROS_H
+#ifndef OPUS_RUNLEVEL_MACROS_H
+#define OPUS_RUNLEVEL_MACROS_H
 
 #define RUNLEVEL_BUFSIZE	32
 
@@ -15,7 +15,7 @@
 	"      "												\
 	"Display this help message.\n"							\
 	"\n"													\
-	"runlevel is a part of ginitd:\n"						\
+	"runlevel is a part of opus:\n"						\
 	"Copyright (C) 2019-2025 Solomon Wood\n"
 
-#endif /* GINITD_RUNLEVEL_MACROS_H */
+#endif /* OPUS_RUNLEVEL_MACROS_H */

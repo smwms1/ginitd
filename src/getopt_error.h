@@ -1,6 +1,6 @@
-#ifndef GINITD_GETOPT_ERROR_H
-#define GINITD_GETOPT_ERROR_H
+#ifndef OPUS_GETOPT_ERROR_H
+#define OPUS_GETOPT_ERROR_H
 
 void getopt_handle_error(char *);
 
-#endif /* GINITD_GETOPT_ERROR_H */
+#endif /* OPUS_GETOPT_ERROR_H */

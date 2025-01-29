@@ -1,6 +1,6 @@
-#ifndef GINITD_RUNLEVEL_MAIN_H
-#define GINITD_RUNLEVEL_MAIN_H
+#ifndef OPUS_RUNLEVEL_MAIN_H
+#define OPUS_RUNLEVEL_MAIN_H
 
 int runlevel_main(void);
 
-#endif /* GINITD_RUNLEVEL_MAIN_H */
+#endif /* OPUS_RUNLEVEL_MAIN_H */

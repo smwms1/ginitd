@@ -1,5 +1,5 @@
-#ifndef GINITD_RUNLEVEL_INFO_H
-#define GINITD_RUNLEVEL_INFO_H
+#ifndef OPUS_RUNLEVEL_INFO_H
+#define OPUS_RUNLEVEL_INFO_H
 
 #include <sys/types.h>
 
@@ -12,4 +12,4 @@ struct runlevel_info {
 
 struct runlevel_info runlevel_info_get(void);
 
-#endif /* GINITD_RUNLEVEL_INFO_H */
+#endif /* OPUS_RUNLEVEL_INFO_H */

@@ -1,5 +1,5 @@
-#ifndef GINITD_LOGGING_LOGF_H
-#define GINITD_LOGGING_LOGF_H
+#ifndef OPUS_LOGGING_LOGF_H
+#define OPUS_LOGGING_LOGF_H
 
 /*
 	WARNING:
@@ -10,4 +10,4 @@
 */
 void glogf(char, char *, ...);
 
-#endif /* GINITD_LOGGING_LOGF_H */
+#endif /* OPUS_LOGGING_LOGF_H */

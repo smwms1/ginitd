@@ -1,5 +1,5 @@
-libginitd = static_library(
-	'ginitd',
+libopus = static_library(
+	'opus',
 
 	# cli
 	'cli_args.c',
@@ -32,10 +32,6 @@ libginitd = static_library(
 	'logging_private.c',
 	'logging_write.c',
 
-	# path
-	'path_concat.c',
-	'path_private.c',
-
 	# runlevel
 	'runlevel_info.c',
 	'runlevel_info_raw.c',
@@ -49,7 +45,7 @@ executable(
 	# init
 	'init.c',
 
-	link_with: libginitd,
+	link_with: libopus,
 	install: true,
 	install_dir: '/sbin'
 )
@@ -60,7 +56,7 @@ executable(
 	# runlevel
 	'runlevel.c',
 
-	link_with: libginitd,
+	link_with: libopus,
 	install: true,
 	install_dir: '/bin'
 )

@@ -1,5 +1,5 @@
-#ifndef GINITD_INIT_PRIVATE_H
-#define GINITD_INIT_PRIVATE_H
+#ifndef OPUS_INIT_PRIVATE_H
+#define OPUS_INIT_PRIVATE_H
 
 #include <sys/types.h>
 
@@ -10,4 +10,4 @@ extern char			init_runlevel;
 extern char			init_last_runlevel;
 extern int			init_runlevel_is_stable;
 
-#endif /* GINITD_INIT_PRIVATE_H */
+#endif /* OPUS_INIT_PRIVATE_H */

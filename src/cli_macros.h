@@ -1,5 +1,5 @@
-#ifndef GINITD_CLI_MACROS_H
-#define GINITD_CLI_MACROS_H
+#ifndef OPUS_CLI_MACROS_H
+#define OPUS_CLI_MACROS_H
 
 #include "cli_args.h"
 
@@ -8,4 +8,4 @@
 	cli_argc	= argc;					\
 	cli_argv	= argv;
 
-#endif /* GINITD_CLI_MACROS_H */
+#endif /* OPUS_CLI_MACROS_H */
